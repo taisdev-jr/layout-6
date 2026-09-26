@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Avançado Combinado</title>
+    <style>
+        /* Reset de margens básicas */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Configuração do contêiner principal ocupando toda a tela */
+        body {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Divide a tela ao meio: NAV à esquerda e o bloco de conteúdo à direita */
+            min-height: 100vh;
+            font-family: sans-serif;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+        }
+
+        /* Barra Lateral Esquerda (Ocupa 100% da altura) */
+        .nav {
+            background-color: #f05a7e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+        }
+
+        /* Bloco da Direita (Estrutura vertical dividida em 3 partes) */
+        .right-container {
+            display: grid;
+            grid-template-rows: auto 1fr auto; /* Header no topo, Miolo flexível, Footer na base */
+        }
+
+        /* Cabeçalho Superior */
+        .header {
+            background-color: #ff6f43;
+            padding: 40px;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        /* Bloco Central (Dividido em duas colunas lado a lado) */
+        .middle-content {
+            display: grid;
+            grid-template-columns: 4fr 1fr; /* Article ganha mais espaço que o Aside */
+        }
+
+        .article {
+            background-color: #008000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #000000; /* Texto escuro conforme a imagem */
+            font-size: 1.2rem;
+        }
+
+        .aside {
+            background-color: #ffff00;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #000000; /* Texto escuro conforme a imagem */
+            font-size: 1.2rem;
+        }
+
+        /* Rodapé Inferior */
+        .footer {
+            background-color: #363062;
+            padding: 40px;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Lado Esquerdo -->
+    <div class="nav">NAV</div>
+
+    <!-- Lado Direito -->
+    <div class="right-container">
+        <header class="header">HEADER</header>
+        
+        <div class="middle-content">
+            <section class="article">ARTICLE</section>
+            <aside class="aside">ASIDE</aside>
+        </div>
+        
+        <footer class="footer">FOOTER</footer>
+    </div>
+
+</body>
+</html>
